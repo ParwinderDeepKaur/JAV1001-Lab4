@@ -2,13 +2,7 @@
 This is sample Android project to show some of the widgets provided in
 Android Studio. Project shows how to implement these views in java.
 This is a scorekeeper app that uses following widgets:
-ScrollView
-LinearLayout
-TextView
-Button
-Switch
-RadioGroup
-RadioButton.
+ScrollView, LinearLayout, TextView, Button, Switch, RadioGroup, RadioButton.
 
 
 ## Getting Started
@@ -16,13 +10,13 @@ RadioButton.
 1. First, clone the repo: git clone https://github.com/ParwinderDeepKaur/JAV1001-Lab4.git
 2. Open Android Studio and select 'Open an existing Android Studio Project'
 3. Navigate to checked out repository.
-4. Select the ParwinderDeep_ScoreKeeper project from downloaded location.
+4. Select the JAV1001-Lab4 project from downloaded location.
 5. Run the application.
 
 
 ### Prerequisites
 
-Android Studio & Emulator
+Android Studio & Emulator or Android Device
 
 
 ### Running the Sample App
@@ -30,10 +24,7 @@ Android Studio & Emulator
 Connect an Android device to your development machine or choose the emulator.
 Android Studio
 Select Run -> Run 'app' (or Debug 'app') from the menu bar
-Select the device you wish to run the app on and click 'OK'
-Gradle
-Install the debug APK on your device ./gradlew installDebug
-Start the APK: <path to Android SDK>/platform-tools/adb -d shell am start io.keen.client.android.example/io.keen.client.android.example.MyActivity
+Select the device/emulator you wish to run the app on and click 'OK'
 
 ### Using the app
 You can choose the team to mark score with toggle button.
