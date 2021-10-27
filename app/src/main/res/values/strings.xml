@@ -9,4 +9,8 @@
     <string name="points_4">4 points</string>
     <string name="points_6">6 points</string>
     <string name="points_8">8 points</string>
+    <string name="lowest_value_for_scores_reached">Lowest value for scores reached!</string>
+    <string name="highest_value_for_scores_reached">Highest value for scores reached!</string>
+    <string name="default_max_score_value">30</string>
+    <string name="default_min_score_value">0</string>
 </resources>    

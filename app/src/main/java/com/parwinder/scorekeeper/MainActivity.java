@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -14,11 +15,12 @@ import androidx.appcompat.widget.SwitchCompat;
  * Student name: Parwinder Deep Kaur
  * Student ID: A00237487
  * This is scorekeeper app, that increment and decrement scores by selected value for different teams.
+ * The app does not allow scores to be greater than 30 and not less than 0.
  * This app shows some views and there usage.
  *
  * @author Parwinder Deep Kaur
- * @version 1.0
- * @since 19 October, 2021
+ * @version 1.1
+ * @since 27 October, 2021
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 decreaseScores();
                 break;
 
-                // put the selected team into a variable
+            // put the selected team into a variable
             case R.id.on_offSC:
                 if (onOffSC.isChecked()) {
                     selectedTeamScoreTV = teamBScoreTV;
@@ -79,45 +81,107 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * this method checks which radio button is selected
      * set text of selectedTeamScoreTV after incrementing by 2,4,6,8 values,
+     * before incrementing it checks if the score is less than the max score value to avoid
+     * score to be more than 30 as a result
      * selectedTeamScoreTV can be either team A or team B
      */
+    @SuppressLint("NonConstantResourceId")
     private void increaseScores() {
         int score = Integer.parseInt(selectedTeamScoreTV.getText().toString()); // parse String to int
-        if (pointRG.getCheckedRadioButtonId() == R.id.point2RB) {
-            selectedTeamScoreTV.setText(String.valueOf(score + 2));
-        } else if (pointRG.getCheckedRadioButtonId() == R.id.point4RB) {
-            selectedTeamScoreTV.setText(String.valueOf(score + 4));
-        } else if (pointRG.getCheckedRadioButtonId() == R.id.point6RB) {
-            selectedTeamScoreTV.setText(String.valueOf(score + 6));
-        } else if (pointRG.getCheckedRadioButtonId() == R.id.point8RB) {
-            selectedTeamScoreTV.setText(String.valueOf(score + 8));
+        switch (pointRG.getCheckedRadioButtonId()) {
+            case R.id.point2RB:
+                if ((score < 30)) // check for max score value
+                    selectedTeamScoreTV.setText(String.valueOf(score + 2)); // parse int value to String
+                else {
+                    setDefaultMaxScore();
+                }
+                break;
+
+
+            case R.id.point4RB:
+                if ((score < 30))
+                    selectedTeamScoreTV.setText(String.valueOf(score + 4));
+                else {
+                    setDefaultMaxScore();
+                }
+                break;
+
+            case R.id.point6RB:
+                if ((score < 30))
+                    selectedTeamScoreTV.setText(String.valueOf(score + 6));
+                else {
+                    setDefaultMaxScore();
+                }
+                break;
+
+            case R.id.point8RB:
+                if ((score < 30))
+                    selectedTeamScoreTV.setText(String.valueOf(score + 8));
+                else {
+                    setDefaultMaxScore();
+                }
         }
+    }
+
+    /**
+     * This method set the maximum value for score text view, maximum score is 30
+     * It also show a toast message to indicate user that maximum score value is reached while incrementing
+     */
+    private void setDefaultMaxScore() {
+        selectedTeamScoreTV.setText(R.string.default_max_score_value);
+        Toast.makeText(this, R.string.highest_value_for_scores_reached, Toast.LENGTH_SHORT).show();
     }
 
     /**
      * this method checks which radio button is selected
      * set text of selectedTeamScoreTV after decrementing by 2,4,6,8 values
-     * before decrementing it checks if the score is not less than the decrement value to avoid negative values
+     * before decrementing it checks if the score is not less than the decrement value to avoid negative result
      * selectedTeamScoreTV can be either team A or team B
      */
+    @SuppressLint("NonConstantResourceId")
     private void decreaseScores() {
         int score = Integer.parseInt(selectedTeamScoreTV.getText().toString()); // parse String into int
-        if (pointRG.getCheckedRadioButtonId() == R.id.point2RB) {
-            if (!(score < 2))
-                selectedTeamScoreTV.setText(String.valueOf(score - 2));
-            else selectedTeamScoreTV.setText(String.valueOf(0));
-        } else if (pointRG.getCheckedRadioButtonId() == R.id.point4RB) {
-            if (!(score < 4))
-                selectedTeamScoreTV.setText(String.valueOf(score - 4));
-            else selectedTeamScoreTV.setText(String.valueOf(0));
-        } else if (pointRG.getCheckedRadioButtonId() == R.id.point6RB) {
-            if (!(score < 6))
-                selectedTeamScoreTV.setText(String.valueOf(score - 6));
-            else selectedTeamScoreTV.setText(String.valueOf(0));
-        } else if (pointRG.getCheckedRadioButtonId() == R.id.point8RB) {
-            if (!(score < 8))
-                selectedTeamScoreTV.setText(String.valueOf(score - 8));
-            else selectedTeamScoreTV.setText(String.valueOf(0));
+        switch (pointRG.getCheckedRadioButtonId()) {
+            case R.id.point2RB:
+                if (!(score < 2)) // check for min score value
+                    selectedTeamScoreTV.setText(String.valueOf(score - 2)); // parse int value to String
+                else {
+                    setDefaultMinScore();
+                }
+                break;
+
+            case R.id.point4RB:
+                if (!(score < 4))
+                    selectedTeamScoreTV.setText(String.valueOf(score - 4));
+                else {
+                    setDefaultMinScore();
+                }
+                break;
+
+            case R.id.point6RB:
+                if (!(score < 6))
+                    selectedTeamScoreTV.setText(String.valueOf(score - 6));
+                else {
+                    setDefaultMinScore();
+                }
+                break;
+
+            case R.id.point8RB:
+                if (!(score < 8))
+                    selectedTeamScoreTV.setText(String.valueOf(score - 8));
+                else {
+                    setDefaultMinScore();
+                }
+                break;
         }
+    }
+
+    /**
+     * This method set the minimum value for score text view, minimum score is 0
+     * It also show a toast message to indicate user that minimum score value is reached while decrementing
+     */
+    private void setDefaultMinScore() {
+        selectedTeamScoreTV.setText(R.string.default_min_score_value);
+        Toast.makeText(this, R.string.lowest_value_for_scores_reached, Toast.LENGTH_SHORT).show();
     }
 }
