@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int score = Integer.parseInt(selectedTeamScoreTV.getText().toString()); // parse String to int
         switch (pointRG.getCheckedRadioButtonId()) {
             case R.id.point2RB:
-                if ((score < 30)) // check for max score value
+                if (((score + 2) < 30)) // check for max score value
                     selectedTeamScoreTV.setText(String.valueOf(score + 2)); // parse int value to String
                 else {
                     setDefaultMaxScore();
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             case R.id.point4RB:
-                if ((score < 30))
+                if (((score + 4) < 30))
                     selectedTeamScoreTV.setText(String.valueOf(score + 4));
                 else {
                     setDefaultMaxScore();
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.point6RB:
-                if ((score < 30))
+                if (((score + 6) < 30))
                     selectedTeamScoreTV.setText(String.valueOf(score + 6));
                 else {
                     setDefaultMaxScore();
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.point8RB:
-                if ((score < 30))
+                if (((score + 8) < 30))
                     selectedTeamScoreTV.setText(String.valueOf(score + 8));
                 else {
                     setDefaultMaxScore();
