@@ -1,8 +1,18 @@
-# Lab 4.1 - Widgets/ Layouts
+# Score Keeping Application
+
+## Version 1.0
 This is sample Android project to show some of the widgets provided in
 Android Studio. Project shows how to implement these views in java.
 This is a scorekeeper app that uses following widgets:
 ScrollView, LinearLayout, TextView, Button, Switch, RadioGroup, RadioButton.
+Added event listeners to the button and radio buttons.
+Implemented functionality to increase or decrease the score values.
+
+
+## Version 1.1
+Added checks to increase scores not more than 30 and not decrease below 0.
+Created 2 new methods to set min(0) and max(30) value for scoreTV and to show toast upon reaching min/max score value.
+Minor enhancements in layout file.
 
 
 ## Getting Started
