@@ -14,6 +14,13 @@ Added checks to increase scores not more than 30 and not decrease below 0.
 Created 2 new methods to set min(0) and max(30) value for scoreTV and to show toast upon reaching min/max score value.
 Minor enhancements in layout file.
 
+## Version 1.2
+Added font file
+Created individual/in-line styles to views
+Created single app theme style
+Created app styles in both dark mode and light mode
+See Screenshots for dark and light mode
+
 
 ## Getting Started
 
