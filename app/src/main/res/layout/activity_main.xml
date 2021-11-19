@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--    parent layout-->
+<!--style set to scroll view for dark/light mode-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -27,20 +29,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:gravity="center"
-                android:text="@string/team_a"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:text="@string/team_a" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:gravity="center"
-                android:text="@string/team_b"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:text="@string/team_b" />
 
         </LinearLayout>
 
@@ -52,9 +48,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="@string/plus_sign"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:text="@string/plus_sign" />
 
         <!--marks textview and switch-->
         <LinearLayout
@@ -65,16 +59,11 @@
             android:weightSum="1"
             android:padding="10dp">
 
+<!--            inline style-->
             <TextView
                 android:id="@+id/team_a_scoreTV"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".4"
-                android:gravity="center"
                 android:text="@string/zero"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                style="@style/myTextViewStyle.myLabel" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/on_offSC"
@@ -84,16 +73,11 @@
                 android:layout_weight=".2"
                 android:checked="true" />
 
+<!--            inline style-->
             <TextView
                 android:id="@+id/team_b_scoreTV"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".4"
-                android:gravity="center"
                 android:text="@string/zero"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                style="@style/myTextViewStyle.myLabel"/>
 
         </LinearLayout>
 
@@ -104,9 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:padding="10dp"
-            android:text="@string/minus_sign"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:text="@string/minus_sign" />
 
         <!--radio group containing 4 score values-->
         <RadioGroup
@@ -117,30 +99,38 @@
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
+<!--            inline style-->
             <RadioButton
                 android:id="@+id/point2RB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyRadioButton"
                 android:checked="true"
                 android:text="@string/points_2" />
 
+<!--            inline style-->
             <RadioButton
                 android:id="@+id/point4RB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
+                style="@style/MyRadioButton"
                 android:text="@string/points_4" />
 
+<!--            inline style-->
             <RadioButton
                 android:id="@+id/point6RB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
+                style="@style/MyRadioButton"
                 android:text="@string/points_6" />
 
+<!--            inline style-->
             <RadioButton
                 android:id="@+id/point8RB"
                 android:layout_width="wrap_content"
+                style="@style/MyRadioButton"
                 android:layout_height="wrap_content"
                 android:checked="false"
                 android:text="@string/points_8" />

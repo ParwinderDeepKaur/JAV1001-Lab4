@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * this method checks which radio button is selected
      * set text of selectedTeamScoreTV after incrementing by 2,4,6,8 values,
-     * before incrementing it checks if the score is less than the max score value to avoid
+     * before incrementing it checks if the score is less than the max score value(30) to avoid
      * score to be more than 30 as a result
      * selectedTeamScoreTV can be either team A or team B
      */

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ParwinderDeep_ScoreKeeper" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/gray_500</item>
+        <item name="colorPrimary">@color/gray_700</item>
         <item name="colorPrimaryVariant">@color/gray_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -11,6 +11,54 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+<!--        single theme for app-->
+        <item name="android:textViewStyle">@style/myTextViewStyle</item>
+        <item name="buttonStyle">@style/myButtonStyle</item>
+        <item name="android:buttonStyle">@style/myButtonStyle</item>
+
+    </style>
+
+    <!--    scrollview style-->
+    <style name="background">
+
+        <item name="android:windowBackground">@color/gray_500</item>
+
+    </style>
+
+
+    <!--    text view style-->
+    <style name="myTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/teal_200</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <!--    button style-->
+    <style name="myButtonStyle" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
+    <!--    radio button style-->
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/teal_200</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <!--    textview style-->
+    <style name="myTextViewStyle.myLabel">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.4</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/maroon</item>
+        <item name="android:textSize">24sp</item>
     </style>
 </resources>
